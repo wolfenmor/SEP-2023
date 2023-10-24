@@ -1,0 +1,12 @@
+p{
+  font-size: 20px;
+}
+.target{
+  font-style: italic;
+}
+.target1{
+  font-weight: bold;
+}
+h1, h2{
+  color: darkgray;
+}
