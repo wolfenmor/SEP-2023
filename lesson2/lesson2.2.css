@@ -1,0 +1,19 @@
+.main{
+  flex-wrap: wrap;
+  height: 800px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.block{
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+body{
+  background-color: wheat;
+}
+.block:hover{
+  background-color: green;
+  border-radius: 50%;
+}

@@ -1,0 +1,34 @@
+.main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.middle{
+  display: flex;
+  height: 200px;
+  justify-content: center;
+  margin: 10px;
+}
+.top, .middle, .lower{
+  width: 500px;
+}
+.top, .lower{
+  background-color: cornflowerblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.top{
+  height: 200px;
+}
+.lower{
+  height: 400px;
+}
+.block{
+  width: 166px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background-color: darkblue ;
+  margin: 10px;
+}
