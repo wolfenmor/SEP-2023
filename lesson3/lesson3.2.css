@@ -1,0 +1,31 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+nav{
+  background-color: #D9D9D9;
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer{
+  background-color: #B8B3B3;
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section{
+  background-color: #A9A8A8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 80vh;
+}
+div{
+  display: flex;
+}

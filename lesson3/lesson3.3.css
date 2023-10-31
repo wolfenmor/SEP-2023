@@ -1,0 +1,31 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+#top{
+  width: 100vw;
+  height: 100vh;
+  background-color: #d78323
+}
+#middle{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(67,235,255,0.56);
+}
+#bottom{
+  width: 100vw;
+  height: 100vh;
+  background-color: green;
+}
+#top, #middle, #bottom{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+h1{
+  margin-bottom: 0;
+}
+h1{
+  margin: 0 100vb;
+}
