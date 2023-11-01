@@ -1,0 +1,52 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+.main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+button{
+  background-color: #b3d4fc;
+  color: white;
+  border: none;
+  width: 150px;
+  height: 25px;
+  border-radius: 2vh;
+}
+.top{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: black 1px solid;
+  width: 30vw;
+  height: 50vh;
+  margin-bottom: 5px;
+}
+img{
+  width: 50px;
+  height: 50px;
+}
+.facebook{
+  height: 30px;
+  width: 30px;
+}
+.facebook1{
+  display: flex;
+  align-items: center;
+}
+.password{
+  margin-top: 0;
+}
+.bottom{
+  width: 30vw;
+  height: 10vh;
+  border: 1px black solid;
+  display: flex;
+}
+.bot{
+  margin-left: 5px;
+}
