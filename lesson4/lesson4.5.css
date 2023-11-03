@@ -1,0 +1,35 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+}
+.container{
+  background-color: white;
+  height: 30vh;
+  width: 25vw;
+}
+.button{
+  font-weight: bold;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 5px;
+}
+.middle{
+  display: flex;
+  flex-direction: column;
+}
+.top{
+  border-bottom: gray 1px solid;
+}
+.middle, .top{
+  margin-left: 5px;
+}
+button{
+  border: orange 1px solid;
+  margin-right: 15px;
+}
+input{
+  width: 230px;
+}
