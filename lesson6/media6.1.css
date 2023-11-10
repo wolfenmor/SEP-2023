@@ -1,0 +1,17 @@
+@media screen and (max-width: 480px) {
+  body{
+    display: flex;
+    flex-direction: column;
+  }
+  header{
+    height: 20vh;
+  }
+  .left{
+    height: 80vh;
+    width: 100vw;
+  }
+  .right{
+    height: 20vh;
+    width: 100vw;
+  }
+}

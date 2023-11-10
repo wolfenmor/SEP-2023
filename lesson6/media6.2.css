@@ -1,0 +1,41 @@
+@media screen and (max-width: 480px) {
+body{
+  display: flex;
+  flex-direction: column;
+}
+  .boxA, .boxB, .boxC, .boxD, .boxE, .boxF{
+    margin: 0;
+  }
+  .boxA{
+    height: 10vh;
+    width: 100vw;
+    margin-bottom: 25px;
+  }
+  .main{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+  }
+  .boxB{
+    height: 40vh;
+    width: 100vw;
+  }
+  .boxC{
+    height: 20vh;
+    width: 32.33vw;
+    margin: 0 2px;
+  }
+  .boxD{
+    height: 20vh;
+    width: 32.33vw;
+    margin-right: 2px;
+  }
+  .boxE{
+    height: 20vh;
+    width: 32.33vw;
+  }
+  .boxF{
+    width: 100vw;
+    height: 10vh;
+  }
+}
