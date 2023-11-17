@@ -42,3 +42,7 @@ p{
   position: relative;
   top: -40px;
 }
+hr{
+  margin-bottom: 100px;
+  background-color: red;
+}
