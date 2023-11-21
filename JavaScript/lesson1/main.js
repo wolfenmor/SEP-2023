@@ -25,4 +25,8 @@ console.log(typeof a)
 console.log(typeof b)
 console.log(typeof c)
 
-prompt("")
+let promName = prompt("Please write your Name")
+let promLastName = prompt("Please write your Last Name")
+let promAge = prompt("Please write your age")
+
+console.log(promName, promLastName, promAge)
