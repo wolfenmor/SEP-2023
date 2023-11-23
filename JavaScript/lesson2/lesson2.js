@@ -90,7 +90,7 @@ else {
 // - Дано змінну time яка рівна числу від 0 до 59. Потрібно написати код, який перевірить, до якої четверті години попадає число
 // (в першу, другу, третю или четверту частину години).
 let t = +prompt("write a time")
-if (t <=15 && t === 0) {
+if (t <=15 || t === 0) {
   console.log("перша")
 }
 else if (t>=16 && t <=30){
@@ -106,13 +106,80 @@ else {
   console.log("error")
 }
 // - У змінній day дано якесь число від 1 до 31. Потрібно визначити, у яку половину(декаду) місяця потрапляє це число (у першу, другу чи третю).
+let day = +prompt("write a day");
+console.log(day)
+if (day <=10 && day >= 1) {
+  console.log("перша")
+}
+else if (day>=11 && day <=20){
+  console.log("друга")
+}
+else if (day>=21 && day <=31){
+  console.log("третя")
+}
+else {
+  console.log("error")
+}
 // - Скласти розклад на тиждень за домопоги switch. Користувач вводить порядковий номер дня тижня і на екрані відображається інфа що заплановано на цей день (можна замість плану на день, назву дня англійською).
+let schedule = +prompt("write a number of the week")
+switch (schedule){
+  case 1 :
+    console.log("monday")
+    break;
+  case 2 :
+    console.log("tuesday")
+    break;
+  case 3 :
+    console.log("wednesday")
+    break;
+  case 4 :
+    console.log("thursday")
+    break;
+  case 5 :
+    console.log("friday")
+    break;
+  case 6 :
+    console.log("saturday")
+    break;
+  case 7 :
+    console.log("sunday")
+    break;
+}
  // - Користувач вводить або має два числа.
+let n1 = 1; let n2 = 4;
    // Потрібно знайти та вивести максимальне число з тих двох .
    // Також потрібно врахувати коли введені рівні числа.
+if (n1 > n2){
+  console.log(n1)
+}
+else if (n1 < n2){
+  console.log(n2)
+}
+else console.log("draw, " + "number - " + n1)
 
   // - є змінна х, яка може прийняти будь-яке значення (стрінг, число, undefined, null  і тд включно). Напишіть код який,
    // за допомоги  оператора || буде присвоювати змінній х значення "default"  якщо значення змінної х являється falsy (хибноподібні, тобто приводиться до false)
+let x = 1
+x = x || "default"
+console.log(x)
 
+// - з файлу arrays.js (лежить в папці 2023 plan ) взяти масив coursesAndDurationArray. За допомоги іф перевірити кожен його елемент на тривалість навчання. У випадку якщо тривалість довша за 5 місяців вивести в консоль "Супер".
+console.log("-----------------")
+let coursesAndDurationArray = [
+  {title: 'JavaScript Complex', monthDuration: 5},
+  {title: 'Java Complex', monthDuration: 6},
+  {title: 'Python Complex', monthDuration: 6},
+  {title: 'QA Complex', monthDuration: 4},
+  {title: 'FullStack', monthDuration: 7},
+  {title: 'Frontend', monthDuration: 4}
+];
 
-  // - з файлу arrays.js (лежить в папці 2023 plan ) взяти масив coursesAndDurationArray. За допомоги іф перевірити кожен його елемент на тривалість навчання. У випадку якщо тривалість довша за 5 місяців вивести в консоль "Супер".
+for (let i = 0; i < coursesAndDurationArray.length; i++) {
+
+  if (coursesAndDurationArray[i].monthDuration > 5){
+    console.log("Super - " + coursesAndDurationArray[i].monthDuration)
+  }
+  else{
+    console.log("Not Bad - " + coursesAndDurationArray[i].monthDuration)
+  }
+}
