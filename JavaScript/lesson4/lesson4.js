@@ -95,7 +95,31 @@ function smallerNumber () {
 }
 smallerNumber()
 // - створити функцію sum(arr)яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад sum([1,2,10]) //->13
+function sum (arr){
+  console.log(arr.reduce((a, b) => a + b))
+}
+sum([1,2,10])
 // - створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відаовідних індексах
+function swap(arr){
+  arr.reverse()
+  console.log(arr)
+}
+swap([12,3,6])
 // Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]
+
 // - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
+
+
 // Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250
+
+function exchange(sumUAH, currencyValues, exchangeCurrency){
+  if (exchangeCurrency === "USD"){
+  console.log(sumUAH / currencyValues[0].valueUSD)
+
+  }
+else if (exchangeCurrency === "EUR"){
+    console.log(sumUAH / currencyValues[1].valueEUR)
+
+  }
+  }
+exchange(10000,[{currency:"USD",valueUSD:40}, {currency:'EUR',valueEUR:42}],"USD")
