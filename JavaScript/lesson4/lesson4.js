@@ -123,3 +123,5 @@ function exchange(sumUAH, currencyValues, exchangeCurrency){
 console.log(exchange(10000, currencies, "USD"));
 console.log(exchange(10000, currencies, "EUR"));
 
+
+
