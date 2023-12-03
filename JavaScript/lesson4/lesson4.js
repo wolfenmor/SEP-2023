@@ -113,13 +113,13 @@ swap([12,3,6])
 // Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250
 
 function exchange(sumUAH, currencyValues, exchangeCurrency){
-  if (exchangeCurrency === "USD"){
-  console.log(sumUAH / currencyValues[0].valueUSD)
+  for (const currency of currencyValues) {
+    if (currency.currency === exchangeCurrency){
+      return  sumUAH / currency.value
+    }
+  }
+  }
+  const currencies = [{currency:"USD",value:40}, {currency:'EUR',value:42}];
+console.log(exchange(10000, currencies, "USD"));
+console.log(exchange(10000, currencies, "EUR"));
 
-  }
-else if (exchangeCurrency === "EUR"){
-    console.log(sumUAH / currencyValues[1].valueEUR)
-
-  }
-  }
-exchange(10000,[{currency:"USD",valueUSD:40}, {currency:'EUR',valueEUR:42}],"USD")
