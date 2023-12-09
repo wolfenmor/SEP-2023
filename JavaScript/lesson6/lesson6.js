@@ -99,44 +99,30 @@ let newCoursesArray = coursesAndDurationArray.map((course, index) =>{
 console.log(newCoursesArray)
 // =========================
 //   описати колоду карт (від 6 до туза без джокерів)
-deck = [
-  { cardSuit: "spade", value: '6', color: "black" },
-  { cardSuit: "spade", value: '7', color: "black" },
-  { cardSuit: "spade", value: '8', color: "black" },
-  { cardSuit: "spade", value: '9', color: "black" },
-  { cardSuit: "spade", value: '10', color: "black" },
-  { cardSuit: "spade", value: 'jack', color: "black" },
-  { cardSuit: "spade", value: 'queen', color: "black" },
-  { cardSuit: "spade", value: 'king', color: "black" },
-  { cardSuit: "spade", value: 'ace', color: "black" },
-  { cardSuit: "diamond", value: '6', color: 'red' },
-  { cardSuit: "diamond", value: '7', color: 'red' },
-  { cardSuit: "diamond", value: '8', color: 'red' },
-  { cardSuit: "diamond", value: '9', color: 'red' },
-  { cardSuit: "diamond", value: '10', color: 'red' },
-  { cardSuit: "diamond", value: 'jack', color: 'red' },
-  { cardSuit: "diamond", value: 'queen', color: 'red' },
-  { cardSuit: "diamond", value: 'king', color: 'red' },
-  { cardSuit: "diamond", value: 'ace', color: 'red' },
-  { cardSuit: "heart", value: '6', color: 'red' },
-  { cardSuit: "heart", value: '7', color: 'red' },
-  { cardSuit: "heart", value: '8', color: 'red' },
-  { cardSuit: "heart", value: '9', color: 'red' },
-  { cardSuit: "heart", value: '10', color: 'red' },
-  { cardSuit: "heart", value: 'jack', color: 'red' },
-  { cardSuit: "heart", value: 'queen', color: 'red' },
-  { cardSuit: "heart", value: 'king', color: 'red' },
-  { cardSuit: "heart", value: 'ace', color: 'red' },
-  { cardSuit: "club", value: '6', color: 'black' },
-  { cardSuit: "club", value: '7', color: 'black' },
-  { cardSuit: "club", value: '8', color: 'black' },
-  { cardSuit: "club", value: '9', color: 'black' },
-  { cardSuit: "club", value: '10', color: 'black' },
-  { cardSuit: "club", value: 'jack', color: 'black' },
-  { cardSuit: "club", value: 'queen', color: 'black' },
-  { cardSuit: "club", value: 'king', color: 'black' },
-  { cardSuit: "club", value: 'ace', color: 'black' },
-]
+let cardSuits = ["spade", "diamond", "club", "heart"]
+let values = ["6", "7", "8", "9", "10", "jack", "queen", "king", "ace"]
+let colorOfCards = ["red", "black"]
+
+let desk = (cardSuits, values, colorOfCards) => {
+  let arr = [];
+  for (const cardSuit of cardSuits) {
+    for (const value of values) {
+      for (const colorOfCard of colorOfCards) {
+          arr.push(
+            {cardSuit : cardSuit,
+              value: value,
+              colorOfCard: colorOfCard}
+          )
+
+      }
+    }
+  }
+  return arr
+
+}
+let deck = desk(cardSuits, values, colorOfCards);
+console.log(deck)
+
 // - знайти піковий туз
 let foundAce = deck.find(item => item.cardSuit === "spade" && item.value === "ace")
 console.log(foundAce);
@@ -144,7 +130,7 @@ console.log(foundAce);
 let includes = deck.filter(item => item.value.includes("6"))
 console.log(includes)
 // - всі червоні карти
-let includes1 = deck.filter(item => item.color.includes("black"))
+let includes1 = deck.filter(item => item.colorOfCard.includes("black"))
 console.log(includes1)
 
 // - всі буби
