@@ -89,25 +89,16 @@ coursesAndDurationArray.filter(function (item){
 
 // -- за допомоги map перетворити кожен елемент на наступний тип {id,title,monthDuration}
 let newCoursesArray = coursesAndDurationArray.map((course, index) =>{
-  course.id = index+1
-  return course
+  return{
+    id: index+1,
+    title: course.title,
+    monthDuration: course.monthDuration
+  }
 })
 
 console.log(newCoursesArray)
 // =========================
 //   описати колоду карт (від 6 до туза без джокерів)
-// - знайти піковий туз
-// - всі шістки
-// - всі червоні карти
-// - всі буби
-// - всі трефи від 9 та більше
-
-// {
-//   cardSuit: '', // 'spade', 'diamond','heart', 'clubs'
-//     value: '', // '6'-'10', 'ace','jack','queen','king','joker'
-//   color:'', // 'red','black'
-// }
-//
 deck = [
   { cardSuit: "spade", value: '6', color: "black" },
   { cardSuit: "spade", value: '7', color: "black" },
@@ -146,6 +137,31 @@ deck = [
   { cardSuit: "club", value: 'king', color: 'black' },
   { cardSuit: "club", value: 'ace', color: 'black' },
 ]
+// - знайти піковий туз
+let foundAce = deck.find(item => item.cardSuit === "spade" && item.value === "ace")
+console.log(foundAce);
+// - всі шістки
+let includes = deck.filter(item => item.value.includes("6"))
+console.log(includes)
+// - всі червоні карти
+let includes1 = deck.filter(item => item.color.includes("black"))
+console.log(includes1)
+
+// - всі буби
+let includes2 = deck.filter(item => item.cardSuit.includes("diamond"))
+console.log(includes2)
+// - всі трефи від 9 та більше
+let filteredDeck = deck.filter(item => (
+  item.cardSuit.includes("club") && ["9", "10", "jack", "queen", "king", "ace"].includes(item.value)
+));
+
+console.log(filteredDeck);
+// {
+//   cardSuit: '', // 'spade', 'diamond','heart', 'clubs'
+//     value: '', // '6'-'10', 'ace','jack','queen','king','joker'
+//   color:'', // 'red','black'
+// }
+//
 // =========================
 //
 //   Взяти описану колоду карт, та за допомоги reduce упакувати всі карти по "мастях" в об'єкт
@@ -253,3 +269,4 @@ let result1 = coursesArray.filter(value =>
   value.modules.includes("docker")
 )
 console.log(result1)
+
