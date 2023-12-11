@@ -101,26 +101,22 @@ console.log(newCoursesArray)
 //   описати колоду карт (від 6 до туза без джокерів)
 let cardSuits = ["spade", "diamond", "club", "heart"]
 let values = ["6", "7", "8", "9", "10", "jack", "queen", "king", "ace"]
-let colorOfCards = ["red", "black"]
 
-let desk = (cardSuits, values, colorOfCards) => {
+let desk = (cardSuits, values) => {
   let arr = [];
   for (const cardSuit of cardSuits) {
     for (const value of values) {
-      for (const colorOfCard of colorOfCards) {
           arr.push(
-            {cardSuit : cardSuit,
-              value: value,
-              colorOfCard: colorOfCard}
+            {cardSuit,
+              value,
+              }
           )
-
-      }
     }
   }
+  arr.map(item => item.cardSuit === "diamond" || item.cardSuit === "heart" ? item.color = "red" : item.color = "black")
   return arr
-
 }
-let deck = desk(cardSuits, values, colorOfCards);
+let deck = desk(cardSuits, values);
 console.log(deck)
 
 // - знайти піковий туз
@@ -130,7 +126,7 @@ console.log(foundAce);
 let includes = deck.filter(item => item.value.includes("6"))
 console.log(includes)
 // - всі червоні карти
-let includes1 = deck.filter(item => item.colorOfCard.includes("black"))
+let includes1 = deck.filter(item => item.color.includes("black"))
 console.log(includes1)
 
 // - всі буби
