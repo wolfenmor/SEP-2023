@@ -49,7 +49,6 @@ console.log(map)
 //   let nums = [11,21,3];
 // sortNums(nums,'ascending') // [3,11,21]
 // sortNums(nums,'descending') // [21,11,3]
-
 let nums = [11,21,3];
 let sortNums = (nums, direction) => {
 if (direction === "ascending" ){
@@ -62,8 +61,6 @@ else if (direction === "descending" ){
 }
 (sortNums(nums, "ascending"));
 (sortNums(nums, "descending"));
-
-
 // ==========================
 // - є масив
  let coursesAndDurationArray = [
@@ -76,7 +73,6 @@ else if (direction === "descending" ){
  ];
 // -- відсортувати його за спаданням за monthDuration
 let res = coursesAndDurationArray.sort((a,b) =>{
-
   return b.monthDuration - a.monthDuration
 });
 console.log(res)
