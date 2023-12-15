@@ -104,7 +104,7 @@ function Car (model, manufacturer, year, maxSpeed, capacity){
       console.log(`Model - ${model} manufacturer - ${manufacturer}`)
     },
     increaseMaxSpeed (newSpeed){
-      return 275 + newSpeed
+      return newSpeed
     },
     changeYear (newValue){
       return newValue
@@ -166,6 +166,50 @@ console.log(car2)
 car2.drive()
 
 // -створити класс/функцію конструктор попелюшка з полями ім'я, вік, розмір ноги. Створити масив з 10 попелюшок.
+function Cinderella(name, age, sizeOfTheFoot){
+  return{
+    name,
+    age,
+    sizeOfTheFoot
+  }
+}
+let arr3 = []
+let cinderella1 = new Cinderella("Maximiliana",21,35)
+let cinderella2 = new Cinderella("Antonette",19, 36)
+let cinderella3 = new Cinderella("Clementine", 22,34)
+let cinderella4 = new Cinderella("Patricia", 21,39)
+let cinderella5 = new Cinderella("Chelsey", 20,36)
+let cinderella6 = new Cinderella("Dennis", 18,37)
+let cinderella7 = new Cinderella("Kurtis", 19,38)
+let cinderella8 = new Cinderella("Nichole", 18,35)
+let cinderella9 = new Cinderella("Glenna", 18,35)
+let cinderella10 = new Cinderella("Clementina", 17,34)
+function pusher3(...cinderella){
+  arr3.push(...cinderella)
+}
+pusher3(cinderella1)
+pusher3(cinderella2)
+pusher3(cinderella3)
+pusher3(cinderella4)
+pusher3(cinderella5)
+pusher3(cinderella6)
+pusher3(cinderella7)
+pusher3(cinderella8)
+pusher3(cinderella9)
+pusher3(cinderella10)
+console.log(arr3)
 // Сторити об'єкт класу "принц" за допомоги класу який має поля ім'я, вік, туфелька яку він знайшов.
+class Prinz extends Cinderella {
+  constructor(name, age, shoeThatHeFound) {
+    super(name, age, shoeThatHeFound);
+  }
+}
+let prinz = new Prinz("Antoine", 18, 37)
+console.log(prinz)
 //   За допомоги циклу знайти яка попелюшка повинна бути з принцом.
+for (const cinderellaItem of arr3) {
+  if (cinderellaItem.sizeOfTheFoot === 37){
+    console.log(cinderellaItem)
+  }
+}
 //   Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
