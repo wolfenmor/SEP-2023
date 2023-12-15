@@ -204,12 +204,20 @@ class Prinz extends Cinderella {
     super(name, age, shoeThatHeFound);
   }
 }
-let prinz = new Prinz("Antoine", 18, 37)
-console.log(prinz)
+let prince = new Prinz("Antoine", 18, 37)
+console.log(prince)
 //   За допомоги циклу знайти яка попелюшка повинна бути з принцом.
-for (const cinderellaItem of arr3) {
-  if (cinderellaItem.sizeOfTheFoot === 37){
-    console.log(cinderellaItem)
+function findCinderellaForPrince(prince, arr3){
+  for (let i = 0; i < arr3.length; i++) {
+   if (arr3[i].sizeOfTheFoot === prince.sizeOfTheFoot){
+     return arr3[i];
+   }
+
   }
+  return null
 }
+let matchingCinderella = findCinderellaForPrince(prince, arr3)
+console.log(matchingCinderella)
 //   Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
+let findCinderella = arr3.find(item => item.sizeOfTheFoot === 37)
+console.log(findCinderella);
