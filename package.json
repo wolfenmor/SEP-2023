@@ -1,9 +1,8 @@
 {
-  "name": " ",
+  "name": "sep-2023",
   "version": "0.0.1",
-  "description": "",
-  "keywords": "",
-  "license": "",
+  "keywords": [],
+  "license": "ISC",
   "author": "",
   "scripts": {
     "build": "parcel build index.html",
@@ -11,7 +10,12 @@
     "start": "npm run build && npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "devDependencies": {
-    "parcel-bundler": "^1.12.4"
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "description": "",
+  "dependencies": {
+    "typescript": "^5.3.3"
   }
 }
