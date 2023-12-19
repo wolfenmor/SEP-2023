@@ -247,3 +247,14 @@ for (const coursesArrayElement of coursesArray) {
   document.body.appendChild(container)
 }
 // ------------------
+
+// mixkit.com
+//let mp3 = document.querySelectorAll("")
+
+
+let titleElement = document.querySelectorAll('.item-grid-card__title');
+let authorElement = document.querySelectorAll('.item-grid-music-preview__author');
+let title = titleElement.innerText
+let author = authorElement.innerText
+console.log('Title:', title);
+console.log('Author:', author);
