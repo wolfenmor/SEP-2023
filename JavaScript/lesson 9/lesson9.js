@@ -252,9 +252,24 @@ for (const coursesArrayElement of coursesArray) {
 //let mp3 = document.querySelectorAll("")
 
 
-let titleElement = document.querySelectorAll('.item-grid-card__title');
-let authorElement = document.querySelectorAll('.item-grid-music-preview__author');
-let title = titleElement.innerText
-let author = authorElement.innerText
-console.log('Title:', title);
-console.log('Author:', author);
+let titleElements = document.querySelectorAll('.item-grid-card__title');
+let authorElements = document.querySelectorAll('.item-grid-music-preview__author');
+let mp3 = document.querySelectorAll('[data-controller=\"audio-player\"]')
+
+for (const titleItem of titleElements) {
+  console.log(`Title: ${titleItem.innerText}`)
+}
+for (const authorItem of authorElements) {
+  console.log(`Author: ${authorItem.innerText}`)
+}
+for (const mp3Item of mp3) {
+  let mp3Url = mp3Item.dataset.audioPlayerPreviewUrlValue
+  console.log(`mp3: ${mp3Url}`)
+}
+//titleElement.forEach(function (element){
+//  console.log(`Title: ${element.innerText}`)
+//})
+//authorElement.forEach(function (element){
+//  console.log(`Author: ${element.innerText}`)
+//})
+
