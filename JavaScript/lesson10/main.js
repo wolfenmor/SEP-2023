@@ -137,7 +137,6 @@ let nums = [1,
   98,
   99,
   100]
-let f2 = document.getElementById("f2")
 let prev = document.getElementById("prev")
 let next = document.getElementById("next")
 // при завантажені сторінки з'являються перші 10 об'єктів.
@@ -164,8 +163,30 @@ prev.addEventListener("click", function () {
   document.body.appendChild(p)
 })
 // - Створити довільний елемент з id = text та створити кнопку.Використовуючи JavaScript, зробіть так, щоб при натисканні на кнопку зникав елемент з id="text".
+let event = document.getElementById("event")
+let hide = document.getElementById("text")
+
+event.addEventListener("click", function () {
+  hide.style.display = "none"
+})
 //   - створити інпут який приймає вік людини та кнопку яка підтверджує дію.При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік чи меньше він ніж 18, та повідомити про це користувача
-//
+let ageBth = document.getElementById("age-btn")
+let f2 = document.getElementById("f2")
+let ageInput = document.getElementById("ageInput")
+ageBth.addEventListener("click", function (ev) {
+  ev.preventDefault()
+  if (f2[0].value < 18 || 0){
+    let div = document.createElement("div")
+    div.innerText = "you're under than 18"
+    document.body.appendChild(div)
+  }
+  if (f2[0].value >= 18){
+    let div = document.createElement("div")
+    div.innerText = "you good"
+    document.body.appendChild(div)
+  }
+})
+
 // *** Створити 3 інпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
 //   При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
 // (Додатковачастина для завдання)
