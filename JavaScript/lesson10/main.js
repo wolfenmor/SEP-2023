@@ -175,7 +175,7 @@ let f2 = document.getElementById("f2")
 let ageInput = document.getElementById("ageInput")
 ageBth.addEventListener("click", function (ev) {
   ev.preventDefault()
-  if (f2[0].value < 18 || 0){
+  if (ageInput.value < 18 || 0){
     let div = document.createElement("div")
     div.innerText = "you're under than 18"
     document.body.appendChild(div)
@@ -187,10 +187,35 @@ ageBth.addEventListener("click", function (ev) {
   }
 })
 
-// *** Створити 3 інпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
+// *** Створити 3 інпута та кнопку. Один визначає кількість рядків, другий - кількість колонок, третій вмиіст ячеєк.
 //   При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
 // (Додатковачастина для завдання)
-//
+let divContainer = document.getElementById("container")
+let boxText = document.getElementById("boxText")
+let rows = document.getElementById("row")
+let columns = document.getElementById("column")
+let btn = document.getElementById("btn")
+
+btn.addEventListener("click", function (ev) {
+  ev.preventDefault()
+  let textValue = boxText.value
+  let rowsValue = rows.value
+  let columnsValue = columns.value
+
+
+  for (let i = 0; i < rowsValue; i++) {
+    let row = document.createElement("th");
+
+    for (let j = 0; j < columnsValue; j++) {
+      let column = document.createElement("td")
+      column.innerText = textValue
+      row.appendChild(column)
+    }
+    divContainer.appendChild(row)
+  }
+  document.body.appendChild(divContainer)
+})
+
 // *** (подібне було вище, але...будьте уважні в другій частині) створити сторінку з довільним блоком, в середині якого є значення "100грн"
 // при перезавантаженні сторінки до значаення додається по 10грн, але !!!
 //   зміна ціни відбувається тільки на перезавантаження, які відбулись пізніше ніж 10 секунд після попереднього.

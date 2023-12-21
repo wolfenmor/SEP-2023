@@ -6,12 +6,21 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <style>
+    th, td {
+      border: 1px solid black;
+      padding: 15px;
+      margin: 10px;
+    }
+  </style>
 </head>
 <body>
 <form id="f1">
+  <label>
   <input type="text"  placeholder="name" name="name">
   <input type="text"  placeholder="surname" name="surname">
   <input type="number"  placeholder="age" name="age">
+  </label>
   <button type="submit">Click</button>
 </form>
 <div id="block"></div>
@@ -22,10 +31,19 @@
 <button id="text">buttonThatWasHidden</button>
 <button id="event">event</button>
 
-<form id="f2">
+<form id="f2"><label>
   <input id="ageInput" type="number" placeholder="write your age" name="age">
-  <button id="age-btn">Click</button>
+  <button id="age-btn">Click</button></label>
+  <br>
 </form>
+<form>
+  <label>
+    <input id="row" type="number" placeholder="write number of row" name="row">
+    <input id="column" type="number" placeholder="write number of column" name="column">
+    <input id="boxText" type="text" placeholder="write text" name="text">
+    <button id="btn">Click</button></label>
+</form>
+<div id="container"></div>
 <script src="main.js"></script>
 </body>
 </html>
