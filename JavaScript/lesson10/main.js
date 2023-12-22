@@ -1,6 +1,5 @@
 // Стоврити форму з трьома полями для name,surname,age та кнопкою. При натисканні на кнопку зчитати данні з полів, та вивести об'єкт в документ. Іншими словами : заповниои форму, натиснули кнопку, під формою з'явився блок з вашим об'єктом
 let f1 = document.getElementById("f1")
-console.log(f1)
 let users = []
 f1.onsubmit = function (ev) {
   ev.preventDefault()
@@ -19,7 +18,7 @@ div.innerText = `name: ${name}, ${surname} - age: ${age}`
 // є сторінка, на якій є блок, я кому знаходиьтся цифра. написати код, який при кожному перезавантажені сторінки буде додавати до неї +1
 window.onload = function (){
   let divBlock = document.getElementById("block")
-  let nums =localStorage.getItem("localPage"|| 0)
+  let nums = localStorage.getItem("localPage"|| 0)
   nums++
   localStorage.setItem("localPage", nums)
   divBlock.innerText = nums
@@ -217,6 +216,18 @@ btn.addEventListener("click", function (ev) {
 })
 
 // *** (подібне було вище, але...будьте уважні в другій частині) створити сторінку з довільним блоком, в середині якого є значення "100грн"
+
 // при перезавантаженні сторінки до значаення додається по 10грн, але !!!
+window.addEventListener("load", function () {
+  let div = document.createElement("div")
+  let uah = localStorage.getItem("localPageFrom100") || "100"
+uah = (uah - 0 + 10).toString()
+  localStorage.setItem("localPageFrom100", uah)
+
+  document.body.appendChild(div)
+})
+
+
+
 //   зміна ціни відбувається тільки на перезавантаження, які відбулись пізніше ніж 10 секунд після попереднього.
 //   При перезавантаженні, яке відбулось раніше ніж минуло 10 секунд - нічого не відбувається
