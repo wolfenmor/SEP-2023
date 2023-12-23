@@ -11,6 +11,9 @@ f1.onsubmit = function (ev) {
     let div = document.createElement("div")
 div.innerText = `name: ${name}, ${surname} - age: ${age}`
     document.body.appendChild(div)
+    ev.target.name.value = ""
+    ev.target.surname.value = ""
+    ev.target.age.value = ""
 
   }
 }
@@ -218,16 +221,20 @@ btn.addEventListener("click", function (ev) {
 // *** (подібне було вище, але...будьте уважні в другій частині) створити сторінку з довільним блоком, в середині якого є значення "100грн"
 
 // при перезавантаженні сторінки до значаення додається по 10грн, але !!!
+//   зміна ціни відбувається тільки на перезавантаження, які відбулись пізніше ніж 10 секунд після попереднього.
+//   При перезавантаженні, яке відбулось раніше ніж минуло 10 секунд - нічого не відбувається
 window.addEventListener("load", function () {
   let div = document.createElement("div")
+  let currentTime = new Date().getTime()
   let uah = localStorage.getItem("localPageFrom100") || "100"
-uah = (uah - 0 + 10).toString()
-  localStorage.setItem("localPageFrom100", uah)
+  if (!uah || (currentTime - uah > 10000)) {
+
+    uah = (parseInt(uah) + 10).toString()
+    localStorage.setItem("localPageFrom100", uah)
+  }
 
   document.body.appendChild(div)
 })
 
 
 
-//   зміна ціни відбувається тільки на перезавантаження, які відбулись пізніше ніж 10 секунд після попереднього.
-//   При перезавантаженні, яке відбулось раніше ніж минуло 10 секунд - нічого не відбувається
