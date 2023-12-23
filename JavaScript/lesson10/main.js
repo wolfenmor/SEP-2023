@@ -203,7 +203,7 @@ btn.addEventListener("click", function (ev) {
 
 
   for (let i = 0; i < rowsValue; i++) {
-    let row = document.createElement("th");
+    let row = document.createElement("tr");
 
     for (let j = 0; j < columnsValue; j++) {
       let column = document.createElement("td")
