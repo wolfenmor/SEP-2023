@@ -220,17 +220,76 @@ let coursesTitleArray = [
     'Frontend'
 ];
 let containerCourses = document.getElementById("courses")
+let courses = JSON.parse(localStorage.getItem("courses")) || []
 for (const course of coursesTitleArray) {
   let p = document.createElement("p")
   p.innerText = `${course}`
   let btn = document.createElement("button")
   btn.innerText = "click"
-
-
-  containerCourses.append(p, btn)
-  let courses = JSON.parse(localStorage.getItem("courses")) || []
   btn.onclick = function (e) {
+    e.preventDefault()
     courses.push(course)
     localStorage.setItem("courses", JSON.stringify(courses))
   }
+  containerCourses.append(p, btn)
 }
+
+let hover = document.getElementById("hoverElement")
+
+hover.addEventListener("mouseover", function () {
+  hover.style.background = "red"
+  hover.style.color = "white"
+})
+hover.addEventListener("mouseout", function (){
+  hover.style.background = "lightblue"
+  hover.style.color = "black"
+})
+
+let f2 = document.getElementById("f2")
+f2.addEventListener("submit", function (ev) {
+  ev.preventDefault()
+  let emailInput = f2.querySelector("#email")
+  let email = emailInput.value
+  if (email.includes("@")){
+    console.log("good")
+  }else{
+    console.log("er")
+  }
+})
+let f3 = document.getElementById("f3")
+let info = document.getElementById("number")
+
+f3.onsubmit = function (ev) {
+  ev.preventDefault()
+  let p = document.createElement("p")
+  p.innerText = info.value
+  info.value = ""
+
+  f3.appendChild(p)
+}
+let scrollBtn = document.createElement("button")
+scrollBtn.innerText = "scroll"
+document.body.appendChild(scrollBtn)
+scrollBtn.addEventListener("click", function () {
+  console.log("Scroll position: " + window.scrollY);
+
+});
+
+let f4 = document.getElementById("f4")
+let inputInfo = document.getElementById("input-info")
+let ul = document.createElement("ul")
+f4.onsubmit = function (ev) {
+  ev.preventDefault()
+  let li = document.createElement("li")
+  li.innerText = `${inputInfo.value}`
+
+  ul.appendChild(li)
+  document.body.appendChild(ul)
+}
+
+let dbClick = document.getElementById("doubleClickElement")
+
+dbClick.addEventListener("dblclick", function (e) {
+  console.log("double click")
+  console.log(e);
+})

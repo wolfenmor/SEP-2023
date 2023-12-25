@@ -14,9 +14,27 @@
   p{
     margin: 0 10px 0 10px;
   }
-  .products{
+  #products{
     display: flex;
   }
+  #hoverElement{
+    background: white;
+    color: black;
+    width: 200px;
+    height: 200px;
+    transition: background-color 1s ease-in-out;
+  }
+  #hoverText{
+    transition: color 1s ease-in-out;
+  }
+.block-link{
+  padding-top: 5px;
+}
+#doubleClickElement{
+  background-color: #99A2AA;
+  width: 50px;
+  height: 50px;
+}
 </style>
 <body>
 
@@ -29,6 +47,29 @@
 <div id="products"></div>
 <button id="clear"></button>
 <div id="courses"></div>
+<div id="hoverElement"><h4 id="hoverText">Доставка <br>по Украини <br><span class="block-link">Докладніше</span></h4></div>
+
+<form id="f2">
+  <label>
+    <input type="text" id="email">
+    <button>Click to show info</button>
+
+  </label>
+</form>
+<form id="f3">
+  <label>
+    <input type="number" placeholder="write your age" id="number">
+    <button>Click to show info</button>
+
+  </label>
+</form>
+<form id="f4">
+  <label>
+    <input id="input-info">
+    <button>ul-li</button>
+  </label>
+</form>
+<div id="doubleClickElement">Double click</div>
 <script src="main.js">
 
 </script>
