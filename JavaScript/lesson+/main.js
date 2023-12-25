@@ -148,20 +148,20 @@ let minus = document.getElementById("minus")
 
 let div = document.createElement("div")
 let p  = document.getElementById("btn-p")
-let currentValue = 0
-localStorage.getItem("currentValue+" || 0)
-localStorage.getItem("currentValue-" || 0)
+
+let currentValue = localStorage.getItem("currentValue" || 0)
 plus.addEventListener("click", function (ev) {
   ev.preventDefault()
   currentValue++
+  localStorage.setItem("currentValue", currentValue)
   p.textContent = `${currentValue}`
-  localStorage.setItem("currentValue+", JSON.stringify(currentValue))
 })
+
 minus.addEventListener("click", function (ev) {
   ev.preventDefault()
   currentValue--
+  localStorage.setItem("currentValue", currentValue)
   p.textContent = `${currentValue}`
-  localStorage.setItem("currentValue-", JSON.stringify(currentValue))
 })
 
 let products = [
@@ -203,4 +203,34 @@ for (const product of products) {
     productsParse.push(product.title)
     localStorage.setItem("products", JSON.stringify(productsParse))
   })
+}
+let clearBtn = document.getElementById("clear")
+clearBtn.innerText = "clear"
+clearBtn.addEventListener("click", function (ev) {
+  ev.preventDefault()
+  localStorage.clear()
+})
+
+let coursesTitleArray = [
+    'JavaScript Complex',
+    'Java Complex',
+    'Python Complex',
+    'QA Complex',
+    'Fullstack',
+    'Frontend'
+];
+let containerCourses = document.getElementById("courses")
+for (const course of coursesTitleArray) {
+  let p = document.createElement("p")
+  p.innerText = `${course}`
+  let btn = document.createElement("button")
+  btn.innerText = "click"
+
+
+  containerCourses.append(p, btn)
+  let courses = JSON.parse(localStorage.getItem("courses")) || []
+  btn.onclick = function (e) {
+    courses.push(course)
+    localStorage.setItem("courses", JSON.stringify(courses))
+  }
 }

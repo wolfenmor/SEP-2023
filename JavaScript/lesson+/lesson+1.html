@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<script>
+ let products = JSON.parse(localStorage.getItem("products"))
+ for (const product of products) {
+   let div = document.createElement("div")
+   div.innerText = `item: ${product}`
+
+   document.body.appendChild(div)
+ }
+</script>
+</body>
+</html>
