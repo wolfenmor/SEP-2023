@@ -294,4 +294,12 @@ dbClick.addEventListener("dblclick", function (e) {
   console.log(e);
 })
 
+let f5 = document.getElementById("f5")
+let ls  = document.getElementById("ls")
 
+let inputLS = JSON.parse(localStorage.getItem("value")) || ""
+f5.onsubmit = (e) => {
+  e.preventDefault()
+  console.log(ls.value)
+  localStorage.setItem("value", JSON.stringify(inputLS))
+}
