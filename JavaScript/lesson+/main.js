@@ -303,3 +303,64 @@ f5.onsubmit = (e) => {
   console.log(ls.value)
   localStorage.setItem("value", JSON.stringify(inputLS))
 }
+let ul2 = document.createElement("ul")
+function ulli(text, length) {
+  for (let i = 0; i < length; i++) {
+    let li = document.createElement("li")
+    ul2.appendChild(li)
+    li.innerText = `${text}`
+  }
+}
+document.body.appendChild(ul2)
+ulli("adsasds", 2)
+
+let counter = 10
+new Promise((resolve) =>{
+  setTimeout(() => {
+    console.log(counter)
+    resolve(counter);
+  }, 2000);
+})
+  .then(
+    (counter)=>{
+      return  new Promise((resolve) => {
+        counter++
+        setTimeout(() => console.log(counter), 2000)
+        resolve(counter)
+      })
+    })
+  .then(
+    (counter)=>{
+      return  new Promise((resolve) =>{
+        counter++
+        setTimeout(() => console.log(counter), 3000)
+      resolve(counter)
+      })
+    })
+  .then(
+    (counter) =>{
+    return new Promise((resolve) => {
+      counter++
+      setTimeout(() => console.log(counter), 4000)
+      resolve(counter)
+    })
+  })
+.then(
+  (counter) => {
+    return new Promise((resolve) => {
+      counter++
+      setTimeout(() => console.log(counter), 5000)
+      resolve(counter)
+    })
+  })
+
+let i = 0;
+
+while (i < 5) {
+    run(i)
+    i++
+  }
+function run(i) {
+  setTimeout(() => {
+    console.log(i)
+  }, 1000)}
