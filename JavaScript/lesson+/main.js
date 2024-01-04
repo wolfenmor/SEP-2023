@@ -364,3 +364,59 @@ function run(i) {
   setTimeout(() => {
     console.log(i)
   }, 1000)}
+
+function fetchData(url) {
+  return new Promise((resolve, reject) => {
+    fetch(url)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok: ${response.status}")
+        }
+        return response.json();
+      })
+      .then(json => resolve(json))
+      .catch(error => reject(error))
+  })
+}
+fetchData("https://jsonplaceholder.typicode.com/todos")
+
+.then(response => {
+  if (response.ok) {
+    return fetchData("https://jsonplaceholder.typicode.com/posts")
+  }
+  throw new Error("first request failed")
+})
+  .then(second => {
+    console.log(second)
+  })
+  .catch(error => {
+    console.log(error)
+  })
+
+const func = async () => {
+  const response = await fetch('https://jsonplaceholder.typicode.com/todos/1')
+  try {
+    let result = await response.json()
+    console.log(result)
+  }
+  catch (e) {
+    console.log(e)
+  }
+}
+void func()
+
+const users10 = async () => {
+  const response = await fetch('https://jsonplaceholder.typicode.com/users')
+    try{
+     let res = await response.json()
+      for (const item of res) {
+        if (item.id % 2){
+          console.log(item.name)
+        }else console.log(item)
+      }
+    }
+    catch (e) {
+      console.log(e)
+    }
+}
+void users10()

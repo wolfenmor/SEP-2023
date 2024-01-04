@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+ // зробити файл users.html
+ // з ендпоінту http://jsonplaceholder.typicode.com/users отримати всіх користувачів
+  //  вивести їх id + name списком та додати посилання з href = user-details.html?id=XXX (замість ХХХ - айді юзера)
+//  при кліку на посилання перехід на відповідну сторінку, на якій буде вся інформація про користувача
+ //  (всі 15 полів) отримана через додатковий запит
+ //  (https://jsonplaceholder.typicode.com/users/XXX   ХХХ - айді користувача)
+  let url = new URL(location.href)
+  let value = url.searchParams.get("data")
+  let parseValue = JSON.parse(value)
+ console.log(parseValue)
+ let ul = document.createElement("ul")
+ for (const key in parseValue) {
+    if (parseValue.hasOwnProperty(key)&& key !== 'address' && key !== 'company'){
+      let li = document.createElement("li")
+      li.innerText = `${key}: ${parseValue[key]}`
+      ul.append(li)
+      document.body.appendChild(ul)
+    }
+  }
+ for (const key in parseValue.address) {
+   if (parseValue.address.hasOwnProperty(key) && key !== "geo") {
+     let li = document.createElement("li")
+     li.innerText = `${key}: ${parseValue.address[key]}`
+     ul.appendChild(li)
+   }
+ }
+ for (const key in parseValue.address.geo) {
+   let li = document.createElement("li")
+   li.innerText = `${key}: ${parseValue.address.geo[key]}`
+   ul.appendChild(li)
+ }
+ for (const key in parseValue.company) {
+   let li = document.createElement("li")
+   li.innerText = `${key}: ${parseValue.company[key]}`
+   ul.appendChild(li)
+ }
+</script>
+</body>
+</html>
