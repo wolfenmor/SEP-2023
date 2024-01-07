@@ -19,10 +19,9 @@
   let url = new URL(location.href)
   let value = url.searchParams.get("data")
   let parseValue = JSON.parse(value)
- console.log(parseValue)
  let ul = document.createElement("ul")
  for (const key in parseValue) {
-    if (parseValue.hasOwnProperty(key)&& key !== 'address' && key !== 'company'){
+    if (parseValue.hasOwnProperty(key) && key !== 'address' && key !== 'company'){
       let li = document.createElement("li")
       li.innerText = `${key}: ${parseValue[key]}`
       ul.append(li)
