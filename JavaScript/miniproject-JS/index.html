@@ -3,8 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
+  <style>
+    .container{
+      display: flex;
+    }
+    .user-box{
+      display: flex;
+      flex-direction: column;
+      border: 1px black solid;
+    }
+    button{
+      margin-top: 10px;
+    }
+  </style>
+
 </head>
 <body>
 
+<div id="container" class="container"></div>
+<script>
+  // В index.html
+  // 1 отримати масив об'єктів з endpoint`а https://jsonplaceholder.typicode.com/users
+  // 2 Вивести id,name всіх user в index.html. Окремий блок для кожного user.
+  // 3 Додати кожному блоку кнопку/посилання , при кліку на яку відбувається перехід  на сторінку user-details.html, котра має детальну інфорацію про об'єкт на який клікнули
+
+  // index.html - всі блоки з user - по 2 в рядок. кнопки/аосилвння розташувати під інформацією про user.
+
+  fetch('https://jsonplaceholder.typicode.com/users')
+        .then(response => response.json())
+        .then(json => {
+          let containerDiv = document.getElementById("container")
+          for (const item of json) {
+            let user = document.createElement("div")
+            user.innerText = `id: ${item.id} name: ${item.name}`
+            user.className = "user-box"
+            let btn = document.createElement("button")
+            btn.innerText = `Click to see more details`
+
+            user.appendChild(btn)
+            containerDiv.appendChild(user)
+
+            btn.onclick = function (e) {
+              e.preventDefault()
+              window.location.href = "./user-details.html"
+            }
+          }
+        })
+</script>
 </body>
 </html>
