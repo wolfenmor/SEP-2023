@@ -5,6 +5,37 @@
   <title>Title</title>
 </head>
 <body>
+<script>
+  let url = new URL(location.href)
+  let value = url.searchParams.get("data")
+  let parseValue = JSON.parse(value)
 
+  let ul = document.createElement("ul")
+    for (const key in parseValue) {
+      if (parseValue.hasOwnProperty(key)){
+        let li = document.createElement("li")
+        li.innerText = `${key}: ${parseValue[key]}`
+        ul.append(li)
+        document.body.appendChild(ul)
+      }
+    }
+
+    fetch(`https://jsonplaceholder.typicode.com/posts/${parseValue.id}/comments`)
+          .then(response => response.json())
+          .then(json => {
+            console.log(json)
+            let container = document.createElement("div")
+            for (const item of json) {
+              let p = document.createElement("p")
+              for (const key in item) {
+                if (item.hasOwnProperty(key)){
+                  p.innerText += `${key}: ${item[key]} | `;                }
+              }
+
+              container.appendChild(p)
+            }
+            document.body.appendChild(container)
+          })
+</script>
 </body>
 </html>

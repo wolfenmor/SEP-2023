@@ -4,16 +4,26 @@
   <meta charset="UTF-8">
   <title>Title</title>
   <style>
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
     .container{
       display: flex;
+      flex-wrap: wrap;
+      width: 500px;
+      height: 500px;
     }
     .user-box{
       display: flex;
       flex-direction: column;
-      border: 1px black solid;
+      margin: 20px;
     }
     button{
       margin-top: 10px;
+      height: 50px;
+      width: 150px;
     }
   </style>
 
@@ -45,10 +55,13 @@
 
             btn.onclick = function (e) {
               e.preventDefault()
-              window.location.href = "./user-details.html"
+              window.location.href = "./user-details.html?data=" + JSON.stringify(item)
             }
           }
         })
+  .catch(e => {
+    console.log(e)
+  })
 </script>
 </body>
 </html>
