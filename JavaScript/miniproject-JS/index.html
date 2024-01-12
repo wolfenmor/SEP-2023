@@ -19,11 +19,20 @@
       display: flex;
       flex-direction: column;
       margin: 20px;
+      background: lightgreen;
     }
     button{
       margin-top: 10px;
       height: 50px;
       width: 150px;
+      background: white;
+      color: black;
+      transition: background-color 1s ease-in-out;
+    }
+    .button-div{
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   </style>
 
@@ -47,16 +56,29 @@
             let user = document.createElement("div")
             user.innerText = `id: ${item.id} name: ${item.name}`
             user.className = "user-box"
+
+            let divForButton = document.createElement("div")
+            divForButton.className = "button-div"
             let btn = document.createElement("button")
             btn.innerText = `Click to see more details`
+            divForButton.appendChild(btn)
 
-            user.appendChild(btn)
+
+            user.appendChild(divForButton)
             containerDiv.appendChild(user)
 
             btn.onclick = function (e) {
               e.preventDefault()
               window.location.href = "./user-details.html?data=" + JSON.stringify(item)
             }
+            btn.addEventListener("mouseover", function () {
+              btn.style.background = "black"
+              btn.style.color = "white"
+            })
+            btn.addEventListener("mouseout", function (){
+              btn.style.background = "white"
+              btn.style.color = "black"
+            })
           }
         })
   .catch(e => {

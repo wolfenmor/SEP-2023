@@ -23,9 +23,16 @@
       box-sizing: border-box;
       padding: 10px;
     }
+    h2{
+      display: flex;
+      justify-content: center;
+    }
   </style>
 </head>
 <body>
+<h1>
+  details of current user
+</h1>
 <script>
   let url = new URL(location.href)
   let value = url.searchParams.get("data")
@@ -90,6 +97,9 @@
       postButton.onclick = function (e) {
         e.preventDefault()
         postButton.style.display = "none"
+        let h2 = document.createElement("h2")
+        h2.innerText = "post of current user"
+        document.body.appendChild(h2)
 
         for (const item of json) {
           let div = document.createElement("div")
